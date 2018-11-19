@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN"
+        "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+<log4j:configuration>
+
+    <!-- Info Output -->
+    <appender name="info" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="/project/updateBlockchain/logs/info.log"/>
+        <param name="Append" value="true"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="MaxBackupIndex" value="20"/>
+        <param name="Threshold" value="INFO"/>
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH\:mm\:ss} %p %t %c - %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- Warn Output -->
+    <appender name="warn" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="/project/updateBlockchain/logs/warn.log"/>
+        <param name="Append" value="true"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="MaxBackupIndex" value="20"/>
+        <param name="Threshold" value="WARN"/>
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH\:mm\:ss} %p %t %c - %m%n"/>
+        </layout>
+    </appender>
+
+
+    <!-- Error Output -->
+    <appender name="error" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="/project/updateBlockchain/logs/error.log"/>
+        <param name="Append" value="true"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="MaxBackupIndex" value="20"/>
+        <param name="Threshold" value="ERROR"/>
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH\:mm\:ss} %p %t %c - %m%n"/>
+        </layout>
+    </appender>
+
+
+
+    <root>
+        <level value="INFO"/>
+        <appender-ref ref="info"/>
+        <appender-ref ref="warn"/>
+        <appender-ref ref="error"/>
+    </root>
+</log4j:configuration>
